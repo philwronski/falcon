@@ -1,0 +1,13 @@
+---
+import MenuTitle from "./MenuTitle.astro";
+interface Props {
+    title?: string;
+    withIndent?: boolean;
+}
+
+const {title, withIndent} = Astro.props;
+---
+<ul class="menu bg-base-100 rounded-box min-w-52">
+    {title && <MenuTitle title={title} asParent={withIndent}>{withIndent && <slot slot="default"/>}</MenuTitle> }
+    {!withIndent && <slot/>}
+</ul>

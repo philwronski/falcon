@@ -1,0 +1,33 @@
+---
+import Layout from "./Layout.astro";
+import Nav from "../components/nav/Nav.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Header from "../components/Header.astro";
+---
+<Layout>
+    <Header/>
+    <div class="pt-16">
+        <Sidebar>
+            <Fragment slot="drawer-side">
+                <Nav items={[
+                    {title: 'Home', link: '/'},
+                    {
+                        title: 'Clusters', collapsed: true, items: [
+                            {title: 'Dashboard', link: '/'},
+                            {title: 'internalapps', link: '/'},
+                        ]
+                    }
+                ]}/>
+            </Fragment>
+            <Fragment slot="drawer-content">
+                <main>
+                    <slot/>
+                </main>
+            </Fragment>
+        </Sidebar>
+    </div>
+
+    <footer>
+
+    </footer>
+</Layout>

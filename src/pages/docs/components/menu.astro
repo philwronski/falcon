@@ -1,0 +1,90 @@
+---
+import Splash from "../../../layouts/Splash.astro";
+import MenuItem from "../../../components/menu/MenuItem.astro";
+import Menu from "../../../components/menu/Menu.astro";
+import CollapsibleSubMenu from "../../../components/menu/CollapsibleSubMenu.astro";
+import MenuTitle from "../../../components/menu/MenuTitle.astro";
+import SubMenu from "../../../components/menu/SubMenu.astro";
+---
+<Splash>
+    <Menu title="Menu with title">
+        <MenuItem>Item 1</MenuItem>
+        <MenuItem link="/">Item 2</MenuItem>
+    </Menu>
+    <Menu>
+        <MenuItem><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+            <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg></MenuItem>
+        <MenuItem link="/"><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+            <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg></MenuItem>
+    </Menu>
+    <Menu title="Menu with title and icon">
+        <MenuItem><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+            <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg></MenuItem>
+        <MenuItem link="/"><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+            <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>Home</MenuItem>
+    </Menu>
+    <Menu title="Menu with title and submenu">
+        <SubMenu>
+            <MenuItem slot="default">Item 1</MenuItem>
+            <MenuItem slot="default" link="/">Item 2</MenuItem>
+        </SubMenu>
+    </Menu>
+    <Menu title="Menu with title as Parent" withIndent={true}>
+        <MenuItem slot="default">Item 1</MenuItem>
+        <MenuItem slot="default" link="/">Item 2</MenuItem>
+    </Menu>
+    <Menu>
+        <MenuTitle title="titre" asParent={true}>
+            <MenuItem slot="default">Item 1</MenuItem>
+            <MenuItem slot="default" link="/">Item 2</MenuItem>
+        </MenuTitle>
+    </Menu>
+    <Menu title="Collapsible Menu with title">
+        <MenuItem>Item 1</MenuItem>
+        <MenuItem link="/">Item 2</MenuItem>
+        <CollapsibleSubMenu title="collapsible" collapsed={true}>
+            <MenuItem>Item 3</MenuItem>
+            <MenuItem link="/">Item 4</MenuItem>
+        </CollapsibleSubMenu>
+    </Menu>
+</Splash>

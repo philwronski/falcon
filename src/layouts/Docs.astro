@@ -1,0 +1,79 @@
+---
+import Layout from "./Layout.astro";
+import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Menu from "../components/menu/Menu.astro";
+import CollapsibleSubMenu from "../components/menu/CollapsibleSubMenu.astro";
+import MenuItem from "../components/menu/MenuItem.astro";
+import SubMenu from "../components/menu/SubMenu.astro";
+import CursorArrowRaysIcon from "../components/icons/CursorArrowRaysIcon.astro";
+---
+<Layout>
+    <Header/>
+    <div class="pt-16">
+        <Sidebar>
+            <Fragment slot="drawer-side">
+                <Menu>
+                    <CollapsibleSubMenu title="Docs" collapsed={true}>
+                        <MenuItem link="/docs/intro">Intro</MenuItem>
+                        <MenuItem link="/docs/install">Install</MenuItem>
+                        <li></li>
+                        <MenuItem link="/docs/usage">Usage</MenuItem>
+                    </CollapsibleSubMenu>
+                    <li></li>
+                    <CollapsibleSubMenu title="Components" collapsed={true}>
+                        <SubMenu title="Action">
+                            <CursorArrowRaysIcon slot="title-icon"/>
+                            <MenuItem link="/docs/components/button">Button</MenuItem>
+                            <MenuItem link="/docs/components/dropdown">Dropdown</MenuItem>
+                            <MenuItem link="/docs/components/modal">Modal</MenuItem>
+                            <MenuItem link="/docs/components/theme-controller">Theme Controller</MenuItem>
+                        </SubMenu>
+                        <SubMenu title="Data Display">
+                            <CursorArrowRaysIcon slot="title-icon"/>
+                            <MenuItem link="/docs/components/accordion">Accordion</MenuItem>
+                            <MenuItem link="/docs/components/badge">Badge</MenuItem>
+                            <MenuItem link="/docs/components/card">Card</MenuItem>
+                            <MenuItem link="/docs/components/collapse">Collapse</MenuItem>
+                            <MenuItem link="/docs/components/list">List</MenuItem>
+                            <MenuItem link="/docs/components/stat">Stat</MenuItem>
+                            <MenuItem link="/docs/components/table">Table</MenuItem>
+                        </SubMenu>
+                        <SubMenu title="Navigation">
+                            <CursorArrowRaysIcon slot="title-icon"/>
+                            <MenuItem link="/docs/components/menu">Menu</MenuItem>
+                            <MenuItem link="/docs/components/navbar">Navbar</MenuItem>
+                            <MenuItem link="/docs/components/tab">Tab</MenuItem>
+                        </SubMenu>
+                        <SubMenu title="Feedback">
+                            <CursorArrowRaysIcon slot="title-icon"/>
+                            <MenuItem link="/docs/components/alert">Alert</MenuItem>
+                            <MenuItem link="/docs/components/tooltip">Tooltip</MenuItem>
+                        </SubMenu>
+                        <SubMenu title="Layout">
+                            <CursorArrowRaysIcon slot="title-icon"/>
+                            <MenuItem link="/docs/components/sidebar">Sidebar</MenuItem>
+                            <MenuItem link="/docs/components/footer">Footer</MenuItem>
+                            <MenuItem link="/docs/components/hero">Hero</MenuItem>
+                            <MenuItem link="/docs/components/join">Join</MenuItem>
+                        </SubMenu>
+                    </CollapsibleSubMenu>
+                    <li></li>
+                    <CollapsibleSubMenu title="Layout" collapsed={true}>
+                        <MenuItem link="/docs/layouts/splash">Splash</MenuItem>
+                        <MenuItem link="/docs/layouts/app">App</MenuItem>
+                    </CollapsibleSubMenu>
+                </Menu>
+            </Fragment>
+            <Fragment slot="drawer-content">
+                <main>
+                    <slot/>
+                </main>
+            </Fragment>
+        </Sidebar>
+    </div>
+
+    <footer>
+
+    </footer>
+</Layout>

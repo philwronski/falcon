@@ -1,0 +1,16 @@
+---
+import Join from "../Join.astro";
+interface Props {
+    joined?: boolean;
+}
+const {joined} = Astro.props;
+---
+{
+    joined ?
+    <Join>
+        <slot/>
+    </Join> :
+    <div class="grid gap-2 grid-cols-1">
+        <slot/>
+    </div>
+}

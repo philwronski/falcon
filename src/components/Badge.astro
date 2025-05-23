@@ -1,0 +1,14 @@
+---
+import type {Colors} from "./colors";
+import type {Size} from "./size";
+interface Props {
+    color?: Colors;
+    size?: Omit<Size, 'md'>;
+    outline?: boolean;
+}
+
+const {color, size, outline} = Astro.props
+
+const classList = ['badge', { [`badge-${color}`]: color, [`badge-${size}`]: size, 'badge-outline': outline}];
+---
+<div class:list={classList}><slot/></div>

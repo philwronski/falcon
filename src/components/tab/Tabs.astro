@@ -1,0 +1,28 @@
+---
+interface Props {
+    inputName: string;
+}
+const {inputName} = Astro.props
+---
+<falcon-tabs inputName={inputName}>
+    <div class="tabs tabs-lift">
+        <slot/>
+    </div>
+</falcon-tabs>
+
+<script>
+    class FalconTabs extends HTMLElement {
+        constructor() {
+            super();
+            const inputs = this.querySelectorAll<HTMLInputElement>('input[type="radio"].tab');
+            if (!Array.from(inputs.values()).find((input) => input.checked)) {
+                inputs[0].checked = true;
+            }
+            inputs.forEach((input) => {
+                input.setAttribute('name', this.getAttribute('inputName') || 'tab');
+            })
+        }
+    }
+
+    customElements.define('falcon-tabs', FalconTabs);
+</script>

@@ -1,0 +1,25 @@
+---
+interface Props {
+    direction?: 'vertical' | 'horizontal';
+}
+const {direction = 'vertical'} = Astro.props;
+---
+<falcon-join-group>
+    <div class:list={['join', `join-${direction}`]}>
+        <slot/>
+    </div>
+</falcon-join-group>
+
+<script>
+    class FalconJoinGroup extends HTMLElement {
+        constructor() {
+            super();
+            const items = this.querySelectorAll('.join > *');
+            items.forEach((item) => {
+                item.classList.add('join-item');
+            })
+        }
+    }
+
+    customElements.define('falcon-join-group', FalconJoinGroup);
+</script>

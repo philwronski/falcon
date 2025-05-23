@@ -1,0 +1,12 @@
+---
+import Splash from "../../../layouts/Splash.astro";
+import Dialog from "../../../components/dialog/Dialog.astro";
+import Button from "../../../components/Button.astro";
+---
+<Splash>
+    <Button onClick="my_modal_1.showModal()">open modal</Button>
+    <Dialog id="my_modal_1">
+        <h3 class="text-lg font-bold">Hello!</h3>
+        <p class="py-4">Press ESC key or click on ✕ button to close</p>
+    </Dialog>
+</Splash>

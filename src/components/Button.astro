@@ -1,0 +1,16 @@
+---
+import {type Colors} from "./colors";
+import {type Size} from "./size";
+interface Props {
+    color?: Colors;
+    size?: Omit<Size, 'md'>;
+    outline?: boolean;
+    link?: string;
+    onClick?: string; // JS passed as string
+}
+
+const {color, size, outline, link, onClick} = Astro.props
+
+const classList = ['btn', { [`btn-${color}`]: color,  [`btn-${size}`]: size, 'btn-outline': outline}];
+---
+{ link ? <a class:list={classList}><slot/></a> : <button class:list={classList} onclick={onClick}><slot/></button> }

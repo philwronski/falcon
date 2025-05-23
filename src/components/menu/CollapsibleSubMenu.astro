@@ -1,0 +1,17 @@
+---
+import SubMenu from "./SubMenu.astro";
+interface Props {
+    title: string;
+    collapsed?: boolean;
+}
+
+const {title,  collapsed} = Astro.props;
+---
+<li>
+    <details open={collapsed} class="group">
+        <summary class="font-semibold group-has-[details]:font-medium">{title}</summary>
+        <SubMenu>
+            <slot/>
+        </SubMenu>
+    </details>
+</li>

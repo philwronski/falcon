@@ -1,0 +1,34 @@
+---
+import Accordion from "../../../components/accordion/Accordion.astro";
+import Splash from "../../../layouts/Splash.astro";
+import AccordionGroup from "../../../components/accordion/AccordionGroup.astro";
+---
+
+<Splash>
+    <section>
+        <AccordionGroup>
+            <Accordion title="How do I create an account?" inputName="faq">
+                Click the "Sign Up" button in the top right corner and follow the registration process.
+            </Accordion>
+            <Accordion title="I forgot my password. What should I do?" inputName="faq">
+                Click on "Forgot Password" on the login page and follow the instructions sent to your email.
+            </Accordion>
+            <Accordion title="How do I update my profile information?" inputName="faq">
+                Go to "My Account" settings and select "Edit Profile" to make changes.
+            </Accordion>
+        </AccordionGroup>
+    </section>
+    <section>
+        <AccordionGroup joined={true}>
+            <Accordion title="How do I create an account?" inputName="faq">
+                Click the "Sign Up" button in the top right corner and follow the registration process.
+            </Accordion>
+            <Accordion title="I forgot my password. What should I do?" inputName="faq">
+                Click on "Forgot Password" on the login page and follow the instructions sent to your email.
+            </Accordion>
+            <Accordion title="How do I update my profile information?" inputName="faq">
+                Go to "My Account" settings and select "Edit Profile" to make changes.
+            </Accordion>
+        </AccordionGroup>
+    </section>
+</Splash>

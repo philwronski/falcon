@@ -1,0 +1,1 @@
+export type Colors = 'neutral'|'primary'|'secondary'|'accent'|'info'|'success'|'warning'|'error';

@@ -1,0 +1,13 @@
+---
+
+---
+<div class="flex bg-base-100 h-full w-full fixed">
+    <aside class="p-2 border-e-1 border-e-base-300">
+        <!-- Sidebar content here -->
+        <slot name="drawer-side"/>
+    </aside>
+    <div class="flex-1">
+        <!-- Page content here -->
+        <slot name="drawer-content"/>
+    </div>
+</div>

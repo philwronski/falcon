@@ -1,0 +1,19 @@
+---
+import { type NavEntry} from "./nav";
+import MenuItem from "../menu/MenuItem.astro";
+import CollapsibleSubMenu from "../menu/CollapsibleSubMenu.astro";
+interface Props {
+    item: NavEntry;
+}
+
+const {item} = Astro.props;
+---
+{
+    item.items ?
+    <CollapsibleSubMenu title={item.title} collapsed={item.collapsed}>
+        {
+            item.items.map((subItem) => <Astro.self item={subItem} />)
+        }
+    </CollapsibleSubMenu>:
+    <MenuItem link={item.link}>{item.title}</MenuItem>
+}

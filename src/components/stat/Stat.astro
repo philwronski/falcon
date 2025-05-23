@@ -1,0 +1,21 @@
+---
+type TextColor = `text-${string}`
+interface Props {
+    title: string;
+    value: string | number;
+    desc?: string;
+    color?: TextColor;
+}
+const {title, value, desc, color} = Astro.props;
+---
+<div class="stat">
+    {Astro.slots.has('figure') && (
+            <div class:list={['stat-figure', {[`${color}`]: color}]}>
+                <slot name="figure"/>
+            </div>
+    )}
+    <div class="stat-title">{title}</div>
+    <div class:list={['stat-value', {[`${color}`]: color}]}>{value}</div>
+    {desc &&
+            <div class="stat-desc">{desc}</div>}
+</div>

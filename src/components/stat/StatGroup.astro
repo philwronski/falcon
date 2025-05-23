@@ -1,0 +1,7 @@
+---
+interface Props {
+    direction?: 'vertical' | 'horizontal'
+}
+const {direction = 'horizontal'} = Astro.props;
+---
+<div class:list={['stats', 'shadow', `stats-${direction}`]}><slot/></div>

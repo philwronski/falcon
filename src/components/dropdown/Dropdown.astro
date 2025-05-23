@@ -1,0 +1,14 @@
+---
+interface Props {
+    title: string;
+}
+const {title} = Astro.props;
+---
+<div class="dropdown">
+    <div tabindex="0" role="button" class="btn m-1">{title}</div>
+    <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-1 w-fit min-w-52 text-nowrap p-2 shadow-sm">
+        <slot>
+            No items found
+        </slot>
+    </ul>
+</div>

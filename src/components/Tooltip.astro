@@ -1,0 +1,37 @@
+---
+import {Colors} from "./colors";
+interface Props {
+    message?: string;
+    placement?: 'top' | 'right' | 'bottom' | 'left';
+    color?: Colors;
+}
+
+const {message, placement = 'top', color} = Astro.props;
+const hasContent = Astro.slots.has('tooltip-content');
+---
+<falcon-tooltip>
+    <div class:list={['tooltip', `tooltip-${placement}`, {[`tooltip-${color}`]: color}]}
+         data-tip={message}>
+        {hasContent &&
+                <div class="tooltip-content">
+                    <slot name="tooltip-content"/>
+                </div>
+        }
+        <slot/>
+    </div>
+</falcon-tooltip>
+
+<script>
+    class FalconTooltip extends HTMLElement {
+        constructor() {
+            super();
+            const hasContent = this.querySelector('.tooltip-content');
+            console.log(hasContent);
+            if (hasContent) {
+                delete this.querySelector<HTMLElement>('.tooltip')?.dataset.tip;
+            }
+        }
+    }
+
+    customElements.define('falcon-tooltip', FalconTooltip);
+</script>

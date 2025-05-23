@@ -1,0 +1,17 @@
+---
+import Menu from "../menu/Menu.astro";
+import NavItem from "./NavItem.astro";
+import {type NavEntry} from "./nav";
+interface Props {
+    items: NavEntry[]
+}
+
+const {items} = Astro.props;
+---
+<nav class="*:w-72">
+    <Menu>
+        {
+            items.map((item) => <NavItem item={item}/>)
+        }
+    </Menu>
+</nav>

@@ -1,0 +1,24 @@
+---
+interface Props {
+    title: string;
+    tagline: string;
+    overlay?: string;
+}
+
+const {title, tagline, overlay} = Astro.props
+---
+<div class="hero min-h-96" style={overlay && {backgroundImage: `url(${overlay})`}}>
+    {overlay &&
+            <div class="hero-overlay"></div>}
+    <div class="hero-content text-center">
+        <div class="max-w-md">
+            <h1 class="text-5xl font-bold">{title}</h1>
+            <p class="py-6">{tagline}</p>
+            {Astro.slots.has('actions') && (
+                    <div class="flex justify-center gap-2">
+                        <slot name="actions" />
+                    </div>
+            )}
+        </div>
+    </div>
+</div>

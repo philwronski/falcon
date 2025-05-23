@@ -1,0 +1,23 @@
+---
+import Splash from "../../../layouts/Splash.astro";
+import CardTitle from "../../../components/card/CardTitle.astro";
+import Card from "../../../components/card/Card.astro";
+import CardImage from "../../../components/card/CardImage.astro";
+import astroLogo from '../../../assets/astro.svg';
+---
+<Splash>
+    <section>
+        <Card>
+            <CardTitle title="My Card" slot="card-title"/>
+            <p>This is a pretty simple Card compoment</p>
+        </Card>
+    </section>
+    <section>
+        <Card>
+            <CardImage src={astroLogo.src} alt="Astro"/>
+            <CardTitle title="My Card" slot="card-title"/>
+            <p>This is a pretty simple Card compoment with an image</p>
+        </Card>
+    </section>
+
+</Splash>
