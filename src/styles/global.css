@@ -2,3 +2,5 @@
 @plugin "daisyui" {
     themes: light --default, synthwave --prefersdark;
 }
+@custom-variant dark (&:where([data-theme=synthwave], [data-theme=synthwave] *));
+@plugin "@tailwindcss/typography";

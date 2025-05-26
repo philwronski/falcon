@@ -1,12 +1,12 @@
 ---
-import Splash from "../../../layouts/Splash.astro";
 import Alert from "../../../components/Alert.astro";
+import Docs from "../../../layouts/Docs.astro";
 ---
-<Splash>
+<Docs>
     <div class="grid gap-2 grid-cols-1">
         <Alert message="This is a simple alert"/>
         <Alert title="Bravo !" message="This is an alert with a title"/>
         <Alert message="Warning: Invalid email address!" severity="warning"/>
         <Alert title="Bravo !" message="This is an alert with a title" severity="success"/>
     </div>
-</Splash>
+</Docs>
