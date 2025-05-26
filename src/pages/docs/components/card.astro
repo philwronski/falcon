@@ -6,18 +6,30 @@ import astroLogo from '../../../assets/astro.svg';
 import Docs from "../../../layouts/Docs.astro";
 ---
 <Docs>
-    <section>
+    <div class="grid gap-2 grid-cols-1">
         <Card>
             <CardTitle title="My Card" slot="card-title"/>
             <p>This is a pretty simple Card compoment</p>
         </Card>
-    </section>
-    <section>
         <Card>
             <CardImage src={astroLogo.src} alt="Astro"/>
             <CardTitle title="My Card" slot="card-title"/>
             <p>This is a pretty simple Card compoment with an image</p>
         </Card>
-    </section>
-
+        <Card outlined={true}>
+            <CardImage src={astroLogo.src} alt="Astro"/>
+            <CardTitle title="My Card" slot="card-title"/>
+            <p>This is a pretty simple Card compoment with an image</p>
+        </Card>
+        <Card color="primary">
+            <CardImage src={astroLogo.src} alt="Astro"/>
+            <CardTitle title="My Card" slot="card-title"/>
+            <p>This is a pretty simple Card compoment with an image</p>
+        </Card>
+        <Card color="primary" outlined={true}>
+            <CardImage src={astroLogo.src} alt="Astro"/>
+            <CardTitle title="My Card" slot="card-title"/>
+            <p>This is a pretty simple Card compoment with an image</p>
+        </Card>
+    </div>
 </Docs>

@@ -1,7 +1,19 @@
 ---
+import {Colors} from "../colors";
+interface Props {
+    outlined?: boolean;
+    color?: Colors;
+}
 
+const { outlined, color} = Astro.props;
 ---
-<div class="card shadow-sm bg-base-100 w-96">
+<div class="card w-96"
+     class:list={[{
+         'shadow-sm bg-base-100 dark:bg-base-200': !outlined && !color,
+         'border-base-300 border rounded-lg': outlined,
+         [`bg-${color} text-${color}-content`]: color && !outlined,
+         [`border-${color} text-${color}`]: outlined && color
+     }]}>
     <slot name="card-image"/>
     <div class="card-body">
         <slot name="card-title"/>
