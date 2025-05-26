@@ -4,7 +4,8 @@ interface Props {
 }
 
 const { link} = Astro.props;
+const {pathname} = Astro.url
 ---
 <li>
-    <a href={link}><slot/></a>
+    <a href={link} class:list={[{'menu-active': link === pathname}]}><slot/></a>
 </li>
